@@ -3,12 +3,13 @@ import Nav from "./components/Nav/Nav.jsx";
 import Cards from "./components/Cards/Cards.jsx";
 import axios from "axios";
 import React from "react";
-
+import { Routes,Route } from "react-router-dom";
+import About from "./components/About/About.jsx";
+import Detail from "./components/Detail/Detail.jsx";
 function App() {
   let [characters, setCharacters] = React.useState([]);
   const [renderedCharacterIds, setRenderedCharacterIds] = React.useState({});
- 
- 
+  
   const onSearch = (id) => {
     if (renderedCharacterIds[id]) {
       window.alert("Este personaje ya está renderizado");
@@ -28,7 +29,6 @@ function App() {
       });
     }
   };
-
   const onClose = (id) => {
     setCharacters(characters.filter((char) => char.id != id));
 
@@ -38,14 +38,9 @@ function App() {
       return newIds;
     });
   };
-
-  
   const clearScreen = () => {
     setCharacters((characters = []));
   };
-
-
-  
 
   document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
@@ -57,7 +52,14 @@ function App() {
   return (
     <div>
       <Nav onSearch={onSearch} clearScreen={clearScreen} />
-      <Cards characters={characters} onClose={onClose} />
+
+      <Routes>
+<Route path="/Home" element={<Cards characters={characters} onClose={onClose}/>} />
+<Route path="/About" element={<About/>} />
+<Route path="/Detail/:id" element ={<Detail/>} />
+    
+      
+      </Routes>
     </div>
   );
 }
