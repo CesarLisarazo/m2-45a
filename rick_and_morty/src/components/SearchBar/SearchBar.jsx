@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './searchBar.css'
 
-let SearchBar =({onSearch})=> {
+const SearchBar =({onSearch,clearScreen})=> {
 
 
 
@@ -23,9 +23,10 @@ const handleChange= (event)=>{
          <span className='headText'>There are 826 characters from the Rick and Morty world to discover!  </span>
     
         <div className='inputAndButton'> 
-         <input value= {id} onChange={handleChange} placeholder= ' ID number' id='input'type='search' />
+         <input autoComplete="off" value= {id} onChange={handleChange} placeholder= ' ID number' id='input'type='search' />
          <button className='showButton' onClick={()=>onSearch(id)}>Show on screen!</button> 
-    
+         <button className='showButton' onClick={()=>onSearch(Math.ceil(Math.random()*826))}>Add random</button>
+         <button className='showButton' onClick={()=>clearScreen()}>Clear screen</button>
          </div>
         
       </div>

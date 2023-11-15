@@ -25,6 +25,7 @@
 }
 
 .showButton {
+  margin: 2px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
   color: rgb(237, 222, 177);
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
@@ -35,11 +36,12 @@
   transition: background-color 0.2s, transform 0.1s;
   height: auto;
   height: 35px;
+  white-space: nowrap;
 }
 
 .showButton:hover {
   background: linear-gradient(45deg, #7e4698, #8f0e89);
-  color: rgb(195, 229, 181);
+
 }
 
 
@@ -62,16 +64,17 @@
   font-weight: bolder;
   text-align: center;
   caret-color: transparent;
+  
 }
 
 input:focus {
-  border: 2px solid rgba(179, 240, 213, 0.764);
+  border: 2px solid rgba(240, 191, 179, 0.764);
 }
 
 .headText {
   font-family: 'Kanit', sans-serif;
   user-select: none;
-  color: rgb(179, 240, 213);
+
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   text-align: center;
   font-size: 30px;
@@ -79,29 +82,29 @@ input:focus {
   height: min-content;
   width: max-content;
   margin-right: 40px;
-  animation: colorChange 3s infinite alternate;
-}
 
-
-@keyframes colorChange {
-  from {
-    color: rgb(179, 240, 213);
-  }
-  to {
-    color: #87CEEB; 
-  }
 }
 
 
 
-@media screen and (max-width:1300px) {
+
+
+@media screen and (max-width:1340px) {
   .searchBar {
     display: flex;
     flex-direction: column;
   }
   .headText{
-    width: 100%;
+ 
     font-size: 30px;
   }
 }
 
+
+@media screen and (max-width:1000px) {
+  .headText{
+    width: 90%;
+    font-size: 25px;
+  }
+
+}

@@ -1,11 +1,11 @@
 import SearchBar from "../SearchBar/SearchBar";
 
-const Nav = ({onSearch})=>{
+const Nav = ({onSearch,clearScreen})=>{
 return(
 <div>
 
-<SearchBar onSearch={onSearch}/>
-<button className='showButton' onClick={()=>onSearch(Math.floor(Math.random()*826))}>Add random</button>
+<SearchBar onSearch={onSearch} clearScreen={clearScreen}/>
+
 </div>
 
 )

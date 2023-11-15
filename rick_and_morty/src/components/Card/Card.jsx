@@ -1,6 +1,6 @@
 import './card.css'
 
-let Card= ({id,name,status,species, gender,origin,image,onClose})=> {
+let Card= ({id,name,status,species, gender,origin,image,onClose,})=> {
 
   return (
     <div className="card">
