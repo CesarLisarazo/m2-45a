@@ -6,47 +6,47 @@ import React from "react";
 
 function App() {
   let [characters, setCharacters] = React.useState([]);
-
-  // const onSearch = (id) => {
-  //   axios(
-  //     `https://rym2.up.railway.app/api/character/${id}?key=pi-cesarlisarazo`
-  //   ).then(({ data }) => {
-  //     if (data.name) {
-        
-  //       if (!characters.some((character) => character.id == data.id)) {
-
-  //         setCharacters((oldChars) => [...oldChars, data]);
-  //       } else {
-  //         alert("This character is already on display");
-  //       }
-  //     } else {
-  //       alert("There is no character with this ID number");
-  //     }
-  //   });
-  // };
-  const onSearch = (id) => { 
-    axios(`https://rym2.up.railway.app/api/character/${id}?key=pi-cesarlisarazo`)
-    .then(
-    ({ data }) => {
-       if (data.name) {
-          if (characters.some((character) => character.id === data.id)) {
-             setCharacters((oldChars) => [data, ...oldChars]);
-           } else {
-             window.alert("¡Ya existe un personaje con este ID!");
-           }
-         } else {
-           window.alert("¡No hay personajes con este ID!");
-         }
-       });
-     }
-
+  const [renderedCharacterIds, setRenderedCharacterIds] = React.useState({});
+ 
+ 
+  const onSearch = (id) => {
+    if (renderedCharacterIds[id]) {
+      window.alert("Este personaje ya está renderizado");
+    } else {
+      axios(
+        `https://rym2.up.railway.app/api/character/${id}?key=pi-cesarlisarazo`
+      ).then(({ data }) => {
+        if (data.name) {
+          setCharacters((oldChars) => [...oldChars, data]);
+          setRenderedCharacterIds((oldIds) => ({
+            ...oldIds,
+            [id]: true,
+          }));
+        } else {
+          window.alert("¡No hay personajes con este ID!");
+        }
+      });
+    }
+  };
 
   const onClose = (id) => {
     setCharacters(characters.filter((char) => char.id != id));
+
+    setRenderedCharacterIds((oldIds) => {
+      const newIds = { ...oldIds };
+      delete newIds[id];
+      return newIds;
+    });
   };
+
+  
   const clearScreen = () => {
     setCharacters((characters = []));
   };
+
+
+  
+
   document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
     var headTextElement = document.querySelector(".headText");
