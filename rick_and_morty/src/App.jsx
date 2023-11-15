@@ -3,9 +3,12 @@ import Nav from "./components/Nav/Nav.jsx";
 import Cards from "./components/Cards/Cards.jsx";
 import axios from "axios";
 import React from "react";
-import { Routes,Route } from "react-router-dom";
+import { Routes,Route, useLocation } from "react-router-dom";
 import About from "./components/About/About.jsx";
 import Detail from "./components/Detail/Detail.jsx";
+import Error from "./components/Error/error.jsx";
+
+
 function App() {
   let [characters, setCharacters] = React.useState([]);
   const [renderedCharacterIds, setRenderedCharacterIds] = React.useState({});
@@ -48,15 +51,18 @@ function App() {
     var color = "#" + Math.floor(Math.random() * 16777215).toString(16);
     headTextElement.style.color = color;
   });
-
+const {pathname} = useLocation()
+console.log(pathname)
   return (
     <div>
+      {}
       <Nav onSearch={onSearch} clearScreen={clearScreen} />
 
       <Routes>
 <Route path="/Home" element={<Cards characters={characters} onClose={onClose}/>} />
 <Route path="/About" element={<About/>} />
 <Route path="/Detail/:id" element ={<Detail/>} />
+<Route path="*" element ={<Error/>} />
     
       
       </Routes>
