@@ -1,8 +1,9 @@
+import "./nav.css";
 import SearchBar from "../SearchBar/SearchBar";
 import { Link } from "react-router-dom";
 const Nav = ({ onSearch, clearScreen }) => {
   return (
-    <div >
+    <div  >
 
       <SearchBar onSearch={onSearch} clearScreen={clearScreen} />
 <div className="navBarButtons">
@@ -12,11 +13,15 @@ const Nav = ({ onSearch, clearScreen }) => {
 
       <Link to="Home">
       <button className="showButton">Home</button>
+<button className='showButton' onClick={()=>clearScreen()}>Clear screen</button>
       </Link>
    
       
 
       </div>    
+      <div className="subTextContainer">
+      <span className="subText">There are 826 characters from the Rick and Morty world to discover!  </span>
+      </div>
     </div>
   );
 };

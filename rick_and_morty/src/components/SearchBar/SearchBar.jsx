@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './searchBar.css'
+import { Link } from 'react-router-dom';
 
 const SearchBar =({onSearch,clearScreen})=> {
 
@@ -24,9 +25,11 @@ const handleChange= (event)=>{
     
         <div className='inputAndButton'> 
          <input autoComplete="off" value= {id} onChange={handleChange} placeholder= ' ID number' id='input'type='search' />
-         <button className='showButton' onClick={()=>onSearch(id)}>Show on screen!</button> 
+         <Link to="Home">
+         <button className='showButton' onClick={()=>onSearch(id)}>Show on screen</button> 
          <button className='showButton' onClick={()=>onSearch(Math.ceil(Math.random()*826))}>Add random</button>
-         <button className='showButton' onClick={()=>clearScreen()}>Clear screen</button>
+         </Link>
+         
          </div>
         
       </div>

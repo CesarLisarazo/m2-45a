@@ -42,7 +42,9 @@ function App() {
     });
   };
   const clearScreen = () => {
-    setCharacters((characters = []));
+    setCharacters([]);
+    setRenderedCharacterIds({})
+  
   };
 
   document.addEventListener("contextmenu", function (e) {
