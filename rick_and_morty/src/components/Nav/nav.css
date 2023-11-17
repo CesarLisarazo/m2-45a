@@ -28,6 +28,7 @@
 
 }
 .subTextContainer{
+ 
     display:flex;
     justify-content: center;
     transform: translateY(-30px);
@@ -44,5 +45,6 @@ margin-right:auto
 
         
   }
+
  
 }

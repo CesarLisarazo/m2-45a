@@ -25,11 +25,12 @@ console.log(character)
   }, [id]);
 
   return( <div className="detailContainer">
-    <div className="card">
-    <h1>{character.name}</h1>
-    <n3>{character.status}</n3>
-    <h3>{character.species}</h3>
-    <h3>{character?.origin?.name}</h3>
+    <div className="card detailCard">
+    <h3>Name : {character.name}</h3>
+    <h3>Id : {character.id}</h3>
+    <h3>Status : {character.status}</h3>
+    <h3>Species : {character.species}</h3>
+    <h3>Origin : {character?.origin?.name}</h3>
     <Link to="/Home">
     <img src={character.image}  />
     </Link>

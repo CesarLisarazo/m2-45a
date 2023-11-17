@@ -7,7 +7,7 @@ import { Routes,Route, useLocation } from "react-router-dom";
 import About from "./components/About/About.jsx";
 import Detail from "./components/Detail/Detail.jsx";
 import Error from "./components/Error/error.jsx";
-
+import Form  from "./components/Form/Form.jsx"
 
 function App() {
   let [characters, setCharacters] = React.useState([]);
@@ -54,13 +54,14 @@ function App() {
     headTextElement.style.color = color;
   });
 const {pathname} = useLocation()
-console.log(pathname)
+
   return (
     <div>
-      {}
-      <Nav onSearch={onSearch} clearScreen={clearScreen} />
+      
+      {pathname === '/Home' || pathname === '/About'||  pathname.includes('/Detail') ? <Nav onSearch={onSearch} clearScreen={clearScreen}/> : null }
 
       <Routes>
+         <Route path="/" element={<Form></Form>}/> 
 <Route path="/Home" element={<Cards characters={characters} onClose={onClose}/>} />
 <Route path="/About" element={<About/>} />
 <Route path="/Detail/:id" element ={<Detail/>} />

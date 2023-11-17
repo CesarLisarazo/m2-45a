@@ -19,10 +19,10 @@ const handleChange= (event)=>{
    return (
       <div className="searchBar">
   
-        
+        <div className='headTextContainer'>
          
          <span className='headText'>There are 826 characters from the Rick and Morty world to discover!  </span>
-    
+         </div>
         <div className='inputAndButton'> 
          <input autoComplete="off" value= {id} onChange={handleChange} placeholder= ' ID number' id='input'type='search' />
          <Link to="Home">

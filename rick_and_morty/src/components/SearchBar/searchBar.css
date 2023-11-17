@@ -31,7 +31,7 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
   color: rgb(237, 222, 177);
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
-  font-size: 17px;
+  font-size: 15px;
   background: linear-gradient(45deg, #6e4698, #550e8f);
   border-radius: 5px;
   cursor: pointer;
@@ -45,7 +45,6 @@
   background: linear-gradient(45deg, #7e4698, #8f0e89);
 
 }
-
 
 
 .showButton:active {
@@ -107,6 +106,12 @@ input:focus {
   .headText{
     width: 90%;
     font-size: 25px;
+ 
   }
+  .headTextContainer{
 
+    display: none;
+    justify-content: center;
+  }
+  
 }
