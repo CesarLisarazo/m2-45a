@@ -67,14 +67,20 @@ function login(userData) {
     alert("Wrong credentiald")
   }
 }
+useEffect(() => {
+  !access && navigate('/');
+}, [access]);
+const logout=()=>{
+  setAccess(false);
+}
 
   return (
     <div>
       
-      {pathname === '/Home' || pathname === '/About'||  pathname.includes('/Detail') ? <Nav onSearch={onSearch} clearScreen={clearScreen}/> : null }
+      {pathname === '/Home' || pathname === '/About'||  pathname.includes('/Detail') ? <Nav onSearch={onSearch} clearScreen={clearScreen} logout={logout}/> : null }
 
       <Routes>
-         <Route path="/" element={<Form login= {login}/>}/> 
+         <Route path="/" element={<Form login= {login} />}/> 
 <Route path="/Home" element={<Cards characters={characters} onClose={onClose}/>} />
 <Route path="/About" element={<About/>} />
 <Route path="/Detail/:id" element ={<Detail/>} />

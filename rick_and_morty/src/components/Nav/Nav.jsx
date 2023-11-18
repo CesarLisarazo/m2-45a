@@ -1,7 +1,7 @@
 import "./nav.css";
 import SearchBar from "../SearchBar/SearchBar";
 import { Link } from "react-router-dom";
-const Nav = ({ onSearch, clearScreen }) => {
+const Nav = ({ onSearch, clearScreen,logout }) => {
   return (
     <div  >
 
@@ -15,7 +15,7 @@ const Nav = ({ onSearch, clearScreen }) => {
       <button className="showButton">Home</button>
 <button className='showButton' onClick={()=>clearScreen()}>Clear screen</button>
       </Link>
-   
+      <button className="showButton" onClick={logout}>Logout</button>
       
 
       </div>    
