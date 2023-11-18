@@ -16,19 +16,19 @@ const Forms = ({ login }) => {
     setUserData({ ...userData, [event.target.name]: event.target.value });
   };
 
-  const handlesubmit=(event)=>{
+  const handleSubmit=(event)=>{
 event.preventDefault();
    login(userData) 
   }
 
   return (
-    <div class="form">
-<div class='banner'>
+    <div className="form">
+<div className='banner'>
   <img src='https://i0.wp.com/615film.com/wp-content/uploads/2018/05/rick-and-morty-banner.jpg?w=1160&ssl=1'></img>
 </div>
      
-      <form class="card ">
-      <div class =" formEmail">
+      <form onSubmit={handleSubmit}className="card ">
+      <div className =" formEmail">
         <label htmlFor="email">Email:</label>
         <input
           onChange={handleChange}
@@ -36,12 +36,12 @@ event.preventDefault();
           type="text"
           name="email"
         />
-        {errors.e1 ? <p style={c}>{errors.e1}</p> : null}
+        {errors.e1 ? <p style={{color:"coral"}}>ingrese ismael</p> : <p style={{color:"green"}}>ingrese ismael</p>}
         {errors.e2 ? <p>{errors.e2}</p> : null}
         {errors.e3 ? <p>{errors.e3}</p> : null}
         </div>
       
-        <div class =" formPass">
+        <div className =" formPass">
         <label htmlFor="password">Password:</label>
         <input
           onChange={handleChange}
@@ -53,7 +53,7 @@ event.preventDefault();
         {errors.p2 ? <p>{errors.p2}</p> : null}
         </div>
      
-        <button class='cardButton' onClick={handlesubmit} type="submit"> Submit</button>
+        <button disabled ={errors.e1|| errors.e2||  errors.e3|| errors.p1 ||errors.p2} className='cardButton'  type="submit"> Submit</button>
       </form>
     </div>
   );

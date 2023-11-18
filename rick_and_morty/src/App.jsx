@@ -3,15 +3,18 @@ import Nav from "./components/Nav/Nav.jsx";
 import Cards from "./components/Cards/Cards.jsx";
 import axios from "axios";
 import React from "react";
-import { Routes,Route, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Routes,Route, useLocation, useNavigate } from "react-router-dom";
 import About from "./components/About/About.jsx";
 import Detail from "./components/Detail/Detail.jsx";
 import Error from "./components/Error/error.jsx";
 import Form  from "./components/Form/Form.jsx"
+const EMAIL = 'Cesar@henry.com';
+const PASSWORD = 'casa1234';
 
 function App() {
-  let [characters, setCharacters] = React.useState([]);
-  const [renderedCharacterIds, setRenderedCharacterIds] = React.useState({});
+  let [characters, setCharacters] = useState([]);
+  const [renderedCharacterIds, setRenderedCharacterIds] = useState({});
   
   const onSearch = (id) => {
     if (renderedCharacterIds[id]) {
@@ -54,6 +57,16 @@ function App() {
     headTextElement.style.color = color;
   });
 const {pathname} = useLocation()
+const navigate = useNavigate();
+const [access, setAccess] = useState(false);
+function login(userData) {
+  if (userData.password === PASSWORD && userData.email === EMAIL) {
+     setAccess(true);
+     navigate('/Home');
+  }else{
+    alert("Wrong credentiald")
+  }
+}
 
   return (
     <div>
@@ -61,7 +74,7 @@ const {pathname} = useLocation()
       {pathname === '/Home' || pathname === '/About'||  pathname.includes('/Detail') ? <Nav onSearch={onSearch} clearScreen={clearScreen}/> : null }
 
       <Routes>
-         <Route path="/" element={<Form></Form>}/> 
+         <Route path="/" element={<Form login= {login}/>}/> 
 <Route path="/Home" element={<Cards characters={characters} onClose={onClose}/>} />
 <Route path="/About" element={<About/>} />
 <Route path="/Detail/:id" element ={<Detail/>} />
