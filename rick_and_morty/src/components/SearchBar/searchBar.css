@@ -53,23 +53,27 @@
 
 #input {
   transform: translateY(-21px);
-  color: #550e8f;
+  color: rgb(237, 222, 177);
   display: flex;
   margin: 10px;
-  background-color: rgba(236, 210, 242, 0.765);
+  background: linear-gradient(45deg, #6e4698, #550e8ff7);
   border-radius: 5px;
   outline: none;
-  width: 112px;
+  width: 86px;
   height: 35px;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bolder;
   text-align: center;
   caret-color: transparent;
   
 }
-
+#input::placeholder{
+ color: rgb(237, 222, 177);
+ font-weight: lighter;
+}
 input:focus {
-  border: 2px solid rgba(240, 191, 179, 0.764);
+  border: 2px solid  rgb(179, 240, 213);
+  font-weight: lighter;
 }
 
 .headText {

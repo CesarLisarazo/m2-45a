@@ -1,3 +1,4 @@
+import "./form.css";
 import { useState } from "react";
 import validation from "../Utilities/validation";
 
@@ -22,9 +23,9 @@ event.preventDefault();
   }
 
   return (
-    <div className="form">
+    <div className="formContainer">
 <div className='banner'>
-  <img src='https://i0.wp.com/615film.com/wp-content/uploads/2018/05/rick-and-morty-banner.jpg?w=1160&ssl=1'></img>
+  <img src='https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg'></img>
 </div>
      
       <form onSubmit={handleSubmit}className="card ">
