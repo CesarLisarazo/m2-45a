@@ -62,10 +62,11 @@
   font-size: 16px;
   font-weight: bolder;
   text-align:center;
-  caret-color:rgba(49, 202, 151, 0.746);
+  caret-color:transparent;
 }
 #input::placeholder {
   color: rgb(237, 222, 177);
+  font-size: small;
   font-weight: lighter;
 }
 input:focus {

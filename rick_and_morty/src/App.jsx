@@ -9,6 +9,7 @@ import About from "./components/About/About.jsx";
 import Detail from "./components/Detail/Detail.jsx";
 import Error from "./components/Error/error.jsx";
 import Form from "./components/Form/Form.jsx";
+import Favorites from "./components/favorites/favorites.jsx";
 const EMAIL = "Cesar@henry.com";
 const PASSWORD = "casa1234";
 
@@ -76,6 +77,7 @@ function App() {
   return (
     <div>
       {pathname === "/Home" ||
+      pathname === "/Favorites" ||
       pathname === "/About" ||
       pathname.includes("/Detail") ? (
         <Nav onSearch={onSearch} clearScreen={clearScreen} logout={logout} />
@@ -88,6 +90,7 @@ function App() {
           element={<Cards characters={characters} onClose={onClose} />}
         />
         <Route path="/About" element={<About />} />
+        <Route path="/Favorites" element= {<Favorites onClose={onClose}/> }  />
         <Route path="/Detail/:id" element={<Detail />} />
         <Route path="*" element={<Error />} />
       </Routes>

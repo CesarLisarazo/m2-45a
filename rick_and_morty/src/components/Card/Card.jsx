@@ -31,8 +31,8 @@ const Card = ({ id, name, image, onClose }) => {
   return (
     <div className="card">
           {
-            isFav ? (<button onClick={handleFavorite}>❤️</button>)
-               : (<button onClick={handleFavorite}>🤍</button>)
+            isFav ? (<button className="heartFav" onClick={handleFavorite}>🧡 </button>)
+               : (<button  className="heartFav" onClick={handleFavorite}>🤍</button>)
          }
       <p className="charId">{id}</p>
       <div className=" charidbackground"></div>

@@ -16,6 +16,9 @@ const Nav = ({ onSearch, clearScreen,logout }) => {
 <button className='showButton' onClick={()=>clearScreen()}>Clear screen</button>
       </Link>
       <button className="showButton" onClick={logout}>Logout</button>
+      <Link to ="Favorites">
+      <button className="showButton">Favorites</button>
+      </Link>
       
 
       </div>    

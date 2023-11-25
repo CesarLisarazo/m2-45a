@@ -17,9 +17,9 @@
   margin: 5px;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.51);
-  transition: transform 0.08s ease;
+  transition: transform 0.2s ease;
   padding-top: 0px;
-  font-size: small;
+  font-size: 12px;
 }
 
 .card:hover {
@@ -43,7 +43,7 @@
 
 
 .charName{
- transform: translateY(-18px); 
+ transform: translateY(-33px); 
 }
 .closeCard {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
@@ -74,16 +74,29 @@
 .charidbackground{
   position: absolute;
   width: 34px;
-  height: 21px;
+  height: 24px;
   border-radius: 5px;
   box-shadow: 1px 1px 4px rgba(179, 240, 213, 0.458);
   border: 1px solid  rgba(179, 240, 213, 0.458);
  
-  transform: translate3d( -5px, -38px, 0px);
+  transform: translate3d( -7px, -64px, 0px);
 }
 
 .charId{
 
-  transform: translate3d( -62px, -6px, 0px);
+  transform: translate3d( -64px, -30px, 0px);
  
+}
+
+.heartFav{
+  width: 39px;
+  height: 26px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px rgba(179, 240, 213, 0.458);
+  border: 1px solid  rgba(179, 240, 213, 0.458);
+  background-color: transparent;
+  transform: translate3d( 60px, 5px, 0px);
+}
+.heartFav:hover{
+  cursor: pointer;
 }

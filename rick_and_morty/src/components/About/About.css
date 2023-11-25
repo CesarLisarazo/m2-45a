@@ -13,3 +13,7 @@ font-size: 14px;
 .aboutCard img{
     width: 284px;
 }
+
+.aboutCard .charName{
+    transform: translateY(0px);
+}
