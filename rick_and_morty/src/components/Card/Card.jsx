@@ -1,19 +1,51 @@
-import './card.css'
-import { Link } from 'react-router-dom';
+import "./card.css";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addFav, removeFav } from "../redux/actions";
 
-let Card= ({id,name,status,species, gender,origin,image,onClose,})=> {
+const Card = ({ id, name, image, onClose }) => {
+  const dispatch = useDispatch();
+  const [isFav, setIsFav] = useState(false);
+  const myFavorites=useSelector((state)=>state.myFavorites)
 
+  const handleFavorite = () => {
+    if (isFav) {
+      setIsFav(false);
+      dispatch(removeFav(id));
+    } else {
+      setIsFav(true);
+      dispatch(
+        addFav({ id, name, image, onClose })
+      );
+    }
+  };
+  useEffect(() => {
+    myFavorites.forEach((fav) => {
+      if (fav.id === id) {
+        setIsFav(true);
+        
+      }
+    });
+  }, [myFavorites]);
   return (
     <div className="card">
-      <p className='charId'>{id}</p>
-      <div className=' charidbackground'></div>
-      <button  className="closeCard" onClick={()=>onClose(id)}>Close card</button>
-      <h2 className='charName'><p>{name}</p></h2>
-    <Link to ={`/Detail/${id}`}>
-      <img src={image} alt={name} />
+          {
+            isFav ? (<button onClick={handleFavorite}>❤️</button>)
+               : (<button onClick={handleFavorite}>🤍</button>)
+         }
+      <p className="charId">{id}</p>
+      <div className=" charidbackground"></div>
+      <button className="closeCard" onClick={() => onClose(id)}>
+        Close card
+      </button>
+      <h2 className="charName">
+        <p>{name}</p>
+      </h2>
+      <Link to={`/Detail/${id}`}>
+        <img src={image} alt={name} />
       </Link>
-
     </div>
   );
-}
-export default  Card;
+};
+export default Card;

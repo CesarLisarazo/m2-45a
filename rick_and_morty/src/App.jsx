@@ -66,7 +66,8 @@ function App() {
   }
   
   useEffect(() => {
-    !access && navigate("/");
+    //negar para devolcer funcionalidad 
+    access && navigate("/");
   }, [access]);
   const logout = () => {
     setAccess(false);

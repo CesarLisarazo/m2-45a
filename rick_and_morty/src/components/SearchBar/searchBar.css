@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap");
 
 .searchBar {
   height: 120px;
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   align-items: center;
   color: rgb(179, 240, 213);
   text-shadow: 0px 0px 10px rgb(0, 0, 0);
@@ -15,7 +14,7 @@
   border-bottom: 6px solid rgba(0, 195, 255, 0.173);
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.51);
-  border-top: 6px solid rgba(0, 195, 255, 0.173) ;
+  border-top: 6px solid rgba(0, 195, 255, 0.173);
   border-left: 0px;
   border-right: 0px;
 }
@@ -43,9 +42,7 @@
 
 .showButton:hover {
   background: linear-gradient(45deg, #7e4698, #8f0e89);
-
 }
-
 
 .showButton:active {
   background: linear-gradient(45deg, #c94da0, #8f0e33);
@@ -59,25 +56,27 @@
   background: linear-gradient(45deg, #6e4698, #550e8ff7);
   border-radius: 5px;
   outline: none;
-  width: 86px;
+  padding: 0px;
+  width: 82px;
   height: 35px;
   font-size: 16px;
   font-weight: bolder;
-  text-align: center;
-  caret-color: transparent;
-  
+  text-align:center;
+  caret-color:rgba(49, 202, 151, 0.746);
 }
-#input::placeholder{
- color: rgb(237, 222, 177);
- font-weight: lighter;
-}
-input:focus {
-  border: 2px solid  rgb(179, 240, 213);
+#input::placeholder {
+  color: rgb(237, 222, 177);
   font-weight: lighter;
 }
+input:focus {
+  border: 2px solid rgb(179, 240, 213);
+  font-weight: lighter;
+  
+}
+
 
 .headText {
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   user-select: none;
 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
@@ -87,35 +86,25 @@ input:focus {
   height: min-content;
   width: max-content;
   margin-right: 40px;
-
 }
 
-
-
-
-
-@media screen and (max-width:1340px) {
+@media screen and (max-width: 1340px) {
   .searchBar {
     display: flex;
     flex-direction: column;
   }
-  .headText{
- 
-   display: none;
+  .headText {
+    display: none;
   }
 }
 
-
-@media screen and (max-width:1000px) {
-  .headText{
+@media screen and (max-width: 1000px) {
+  .headText {
     width: 90%;
     font-size: 25px;
- 
   }
-  .headTextContainer{
-
+  .headTextContainer {
     display: none;
     justify-content: center;
   }
-  
 }
