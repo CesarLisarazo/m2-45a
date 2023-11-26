@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import About from "./components/About/About.jsx";
 import Detail from "./components/Detail/Detail.jsx";
-import Error from "./components/Error/error.jsx";
+import Error from "./components/Error/Error.jsx";
 import Form from "./components/Form/Form.jsx";
 import Favorites from "./components/favorites/favorites.jsx";
 const EMAIL = "Cesar@henry.com";

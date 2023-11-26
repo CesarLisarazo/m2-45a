@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addFav, removeFav } from "../redux/actions";
 
-const Card = ({ id, name, image, onClose }) => {
+const Card = ({ id, name, image, onClose, gender }) => {
   const dispatch = useDispatch();
   const [isFav, setIsFav] = useState(false);
   const myFavorites = useSelector((state) => state.myFavorites);
@@ -15,7 +15,7 @@ const Card = ({ id, name, image, onClose }) => {
       dispatch(removeFav(id));
     } else {
       setIsFav(true);
-      dispatch(addFav({ id, name, image, onClose }));
+      dispatch(addFav({ id, name, image, onClose, gender }));
     }
   };
   useEffect(() => {
@@ -27,6 +27,7 @@ const Card = ({ id, name, image, onClose }) => {
   }, [myFavorites]);
   return (
     <div className="card">
+      
       {isFav ? (
         <button className="heartFav" onClick={handleFavorite}>
           🧡{" "}
@@ -36,17 +37,20 @@ const Card = ({ id, name, image, onClose }) => {
           🤍
         </button>
       )}
+      
       <p className="charId">{id}</p>
+      
       <div className=" charidbackground"></div>
       <button className="closeCard" onClick={() => onClose(id)}>
         Close card
       </button>
-      <h2 className="charName">
-        <p>{name}</p>
+      <h2 className="charName"><p>{name}</p>
       </h2>
       <Link to={`/Detail/${id}`}>
+      
         <img src={image} alt={name} />
       </Link>
+   
     </div>
   );
 };

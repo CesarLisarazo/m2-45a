@@ -34,7 +34,9 @@ const retrocederPagina = () => {
     <h3>Id : {character.id}</h3>
     <h3>Status : {character.status}</h3>
     <h3>Species : {character.species}</h3>
+    <h3>Gender : {character.gender}</h3>
     <h3>Origin : {character?.origin?.name}</h3>
+
    
     <img    onClick={retrocederPagina} src={character.image}  />
     
