@@ -39,6 +39,9 @@
   cursor: pointer;
 }
 
+.order option{
+  background-color:#37a0ca ;
+}
 .filter {
   margin: 10px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
@@ -49,6 +52,9 @@
   background: linear-gradient(45deg, #8dc1d1, #37a0ca);
   border-radius: 5px;
   cursor: pointer;
+}
+.filter option{
+  background-color:#37a0ca ;
 }
 
 .selectors{
