@@ -2,15 +2,19 @@ import "./detail.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
+;
+import { useNavigate } from 'react-router-dom';
 
 const Detail = () => {
   let [character, setCharacter] = useState({});
 const {id}= useParams()
+const navigate = useNavigate();
+
+const retrocederPagina = () => {
+  navigate(-1);
+};
 
 
-console.log(character)
   useEffect(() => {
     axios(
       `https://rym2.up.railway.app/api/character/${id}?key=pi-cesarlisarazo`
@@ -31,9 +35,9 @@ console.log(character)
     <h3>Status : {character.status}</h3>
     <h3>Species : {character.species}</h3>
     <h3>Origin : {character?.origin?.name}</h3>
-    <Link to="/Home">
-    <img src={character.image}  />
-    </Link>
+   
+    <img    onClick={retrocederPagina} src={character.image}  />
+    
   
   </div>
   </div>

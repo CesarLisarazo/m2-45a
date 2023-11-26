@@ -96,6 +96,7 @@
   border: 1px solid  rgba(179, 240, 213, 0.458);
   background-color: transparent;
   transform: translate3d( 60px, 5px, 0px);
+  color: #adcde6c9;
 }
 .heartFav:hover{
   cursor: pointer;

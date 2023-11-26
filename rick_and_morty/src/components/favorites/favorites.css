@@ -12,9 +12,17 @@
     display: none;
 }
 
-
+.favoritesContainer .card:hover {
+    transform: scale(1.04);
+    border: 4px solid rgba(0, 213, 255, 0.531);
+  }
 
 
 .favoritesContainer img{
     transform: translateY(42px);
+}
+
+.favoritesContainer .card{
+    background-image: url(https://t3.ftcdn.net/jpg/05/66/18/20/240_F_566182056_HpUZJTAjV7rcBWimtppYEX9fgqSNhZ8c.jpg);
+    background-size: cover;
 }

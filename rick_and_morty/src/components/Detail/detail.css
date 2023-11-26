@@ -15,3 +15,7 @@ font-size: 20px;
     width: 284px;
     transform: translateY(35px);
 }
+
+.detailCard img:hover{
+    cursor: pointer;
+}
