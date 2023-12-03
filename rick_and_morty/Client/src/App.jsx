@@ -22,7 +22,7 @@ function App() {
       window.alert("Este personaje ya está renderizado");
     } else {
       axios(
-        `https://rym2.up.railway.app/api/character/${id}?key=pi-cesarlisarazo`
+        `http://localhost:3001/rickandmorty/character/${id}`
       ).then(({ data }) => {
         if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
