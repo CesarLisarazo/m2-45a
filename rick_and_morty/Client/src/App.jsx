@@ -21,7 +21,7 @@ function App() {
     if (renderedCharacterIds[id]) {
       window.alert("Este personaje ya está renderizado");
     } else {
-      axios(
+      axios.get(
         `http://localhost:3001/rickandmorty/character/${id}`
       ).then(({ data }) => {
         if (data.name) {

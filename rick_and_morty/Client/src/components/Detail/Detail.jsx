@@ -17,7 +17,7 @@ const retrocederPagina = () => {
 
   useEffect(() => {
     axios(
-      `http://localhost:3001/rickandmorty/character/${id}`
+      `http://localhost:3001/rickandmorty/character/${id}`//http://localhost:3001/rickandmorty/character
     ).then(({ data }) => {
       if (data.name) {
         setCharacter(data);
