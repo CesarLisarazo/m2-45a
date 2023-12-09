@@ -9,7 +9,7 @@ import About from "./components/About/About.jsx";
 import Detail from "./components/Detail/Detail.jsx";
 import Error from "./components/Error/Error.jsx";
 import Form from "./components/Form/Form.jsx";
-import Favorites from "./components/favorites/favorites.jsx";
+import Favorites from "./components/favorites/Favorites.jsx";
 const EMAIL = "Cesar@henry.com";
 const PASSWORD = "casa1234";
 
@@ -25,8 +25,8 @@ function App() {
         `http://localhost:3001/rickandmorty/character/${id}`
       ).then(({ data }) => {
         if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
           setRenderedCharacterIds((oldIds) => ({ ...oldIds, [id]: true }));
+          setCharacters((oldChars) => [...oldChars,data ]);
         } else {
           window.alert("¡No hay personajes con este ID!");
         }
@@ -57,19 +57,31 @@ function App() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
-  function login(userData) {
-    if (userData.password === PASSWORD && userData.email === EMAIL) {
-      setAccess(true);
-      navigate("/Home");
-    } else {
-      alert("Wrong credentiald");
-    }
-  }
   
+  
+  // function login(userData) {
+  //   if (userData.password === PASSWORD && userData.email === EMAIL) {
+  //     setAccess(true);
+  //     navigate("/Home");
+  //   } else {
+  //     alert("Wrong credentiald");
+  //   }
+  // }
+  function login(userData) {
+    const { email, password } = userData;
+    const URL = 'http://localhost:3001/rickandmorty/login/';
+    axios(URL + `?email=${email}&password=${password}`)
+    .then(({ data }) => {
+       const { access } = data;
+       setAccess(data);
+       access && navigate('/Home');
+    });
+ }
   useEffect(() => {
     //negar para devolcer funcionalidad 
-    access && navigate("/");
+    !access && navigate("/");
   }, [access]);
+
   const logout = () => {
     setAccess(false);
   };

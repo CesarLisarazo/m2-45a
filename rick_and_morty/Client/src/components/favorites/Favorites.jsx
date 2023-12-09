@@ -17,14 +17,16 @@ const Favorites = () => {
   return (
     <div className="favoritesContainer">
       <div className="selectors">
-      <div class="select-dropdown">
+      <div className="select-dropdown">
+        <h3 className="sortBy">Sort</h3>
         <select className="order" name="order" onChange={handleOrder}>
           <option value="A"> Ascendente</option>
           <option value="D"> Descendente</option>
         </select>
         </div>
 
-        <div class="select-dropdown">
+        <div className="select-dropdown">
+        <h3 className="filterBy">Filter</h3>
           <select className="filter" name="filter" onChange={handleFilter}>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
