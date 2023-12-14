@@ -17,7 +17,7 @@ const retrocederPagina = () => {
 
   useEffect(() => {
     axios(
-      `http://localhost:3001/rickandmorty/character/${id}`
+      `https://rym2.up.railway.app/api/character/${id}?key=pi-cesarlisarazo`
     ).then(({ data }) => {
       if (data.name) {
         setCharacter(data);
@@ -30,6 +30,8 @@ const retrocederPagina = () => {
 
   return( <div className="detailContainer">
     <div className="card detailCard">
+    <img    onClick={retrocederPagina} src={character.image}  />
+   <div className=" charInfo">
     <h3>Name : {character.name}</h3>
     <h3>Id : {character.id}</h3>
     <h3>Status : {character.status}</h3>
@@ -37,8 +39,7 @@ const retrocederPagina = () => {
     <h3>Gender : {character.gender}</h3>
     <h3>Origin : {character?.origin?.name}</h3>
 
-   
-    <img    onClick={retrocederPagina} src={character.image}  />
+    </div>
     
   
   </div>
