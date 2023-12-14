@@ -5,7 +5,7 @@ return (
 <div className="aboutContainer">
 <div className="card aboutCard">
      
-   <Link to="/">
+   <Link to="/Home">
       <img src="https://i.imgur.com/tHlRZxO.jpg" alt={name} />
       </Link>
       <h2 ><p>Name : Cesar</p></h2>
