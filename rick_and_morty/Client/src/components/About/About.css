@@ -3,17 +3,27 @@
     justify-content: center;
 }
 
-.aboutCard{
-    height: 590px;
-    width: 300px;
+
+.aboutContainer .card{
+background-image: url(https://t3.ftcdn.net/jpg/05/66/18/20/240_F_566182056_HpUZJTAjV7rcBWimtppYEX9fgqSNhZ8c.jpg);
+background-size: cover;
+height: 590px;
+width: 300px;
 font-size: 14px;
+border: 6px solid rgb(2, 27, 23);
+}
+.aboutContainer .card:hover{
+    transform: translate3d(0px, -80px, 0px);
+
+
 }
 
 
-.aboutCard img{
-    width: 284px;
-}
-
-.aboutCard .charName{
-    transform: translateY(0px);
+.aboutContainer .card img{
+    border: 6px solid rgb(2, 27, 23);
+width: 284px;
+z-index: 1;
+scale: 1.2;
+cursor: pointer;
+transform: translate3d(20px, 210px, 0px);
 }
