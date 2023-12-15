@@ -3,92 +3,137 @@
 
 .formContainer{
     display: flex;
-   
-    flex-direction: column;
+   align-items: center;
+
     align-items: center;
     justify-content:center;
+    background-image: url("https://wallpapers.com/images/hd/rick-and-morty-silhouette-against-the-moon-7yso4pb0o9rr4vqd.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
 
 }
-.formContainer .showButton{
-position: relative;
-top:5%;
+.subButton{
+    transform: translateY(165px);
+    box-shadow: none;
+    border-radius: 8px;
+}
+.formContainer .showButton :active{
+   background-color: unset;
 }
 
 .banner{
-    position: relative;
-top:20px;
+    position: absolute;
+    top: 40px;
+    z-index: 1;
 }
 
-.formCard{opacity: 0.7;
-    
+.formCard{
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
         user-select: none;
-        color: rgb(179, 240, 213);
-        text-shadow: 0px 0px 10px rgb(0, 0, 0);
-        text-align: center;
+        color: rgb(17, 80, 119);
+
+ 
         position: relative;
         align-items: center;
-        justify-content: center;
-        background: linear-gradient(45deg, #adcde6, #8024cc);
-        background-image: url(https://img.freepik.com/premium-vector/space-background-blue-violet-black-background_624315-118.jpg);
-        background-size: cover;
+   justify-content: center;
         background-position: center;
         
         border: 4px solid rgba(0, 213, 255, 0.1);
-        border-radius: 7px;
-        height:350px;
-        width: 315px;
+        border-radius: 50%;
+        height:525px;
+        width: 525px;
         overflow: hidden;
-        margin: 5px;
-        padding: 10px;
+ 
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.51);
-        transition: transform 0.2s ease;
-        padding-top: 0px;
+        transition: transform 0.1s ease;
+       
         font-size: 12px;
-        transition: box-shadow 1s ease;
+        transition: box-shadow 0.5s ease;
       
     
 } 
 
 
 .formCard:hover {
-    box-shadow: 0 0px 20px rgba(49, 246, 5, 0.51);
+    box-shadow: 0 0px 40px rgba(5, 146, 246, 0.51);
 }
 
 @keyframes lightsdsd {
     from {
-        box-shadow: 0 0px 0px rgba(49, 246, 5, 0.51);
+        box-shadow: 0 0px 0px rgb(17, 80, 119);;
     }
     to {
-        box-shadow: 0 0px 20px rgba(25, 5, 246, 0.51);
+        box-shadow: 0 0px 20px rgb(17, 80, 119);;
     }
 }
 
 
 
 
-.formCard p {
 
-    font-size: larger;
-    font-weight: bold;
-}
-.formCard label{
-    font-size: larger;
-    font-weight: bold;
 
-}
 
 .emailErrors{
    text-align: left;
 }
 
 .passErrors{
+    position: relative;
     text-align: left;
+
  }
 
 
- .email{
-  
-    text-align: center;
+ .formEmail{
+    margin-left: 20px;
+  display: flex;
+  align-items: center;
 
-    font-size: 65px;
+  
+ }
+ .formEmail input {
+    height: 20px;
+    width: 150px;
+  
+    border-color: rgba(17, 80, 119, 0.46);
+    margin: 10px;  background-color: #e6eefb;
+    border-radius: 10px;
+    
+  
+ }
+
+ .formInput:focus {
+    outline: none;
+  
+ }
+ .formInput::placeholder {
+    color: rgba(17, 81, 121, 0.705);
+ }
+
+
+ .formInput {
+    color: rgb(4, 28, 43);
+ }
+
+
+ .formPass{
+    display: flex;
+   align-items: center;
+ 
+
+ }
+
+ .formPass input{
+    height: 20px;
+    width: 150px;
+
+    border-color: rgba(17, 80, 119, 0.46);
+    margin: 10px;  background-color: #e6eefb;
+    border-radius: 10px;
+   
+   
  }
