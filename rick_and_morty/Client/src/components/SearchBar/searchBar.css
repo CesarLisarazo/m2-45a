@@ -78,17 +78,42 @@ input:focus {
 
 
 .headText {
-  font-family: "Kanit", sans-serif;
-  user-select: none;
-
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  text-align: center;
   font-size: 30px;
-  font-weight: bolder;
-  height: min-content;
-  width: max-content;
-  margin-right: 40px;
+  font-weight:650;
+background-image: linear-gradient(90deg, rgba(212, 0, 255, 0.615), rgba(12, 239, 28, 0.575));
+
+
+background-repeat: no-repeat;
+background-position: center;
+animation: trans 5s infinite
 }
+
+@keyframes trans {
+  0% {
+    background-size:0% 100% ;
+    background-position: left;
+  }
+
+10% {
+    background-size: 50% 100% ;
+    background-position: left;
+  }
+
+  90% {
+    background-size: 50% 100% ;
+    background-position: right;
+  }
+  100% {
+    background-size:0% 100% ;
+    background-position: left;
+
+}
+}
+
+
+
+
+
 
 @media screen and (max-width: 1340px) {
   .searchBar {
