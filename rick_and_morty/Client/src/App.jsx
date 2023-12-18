@@ -22,7 +22,7 @@ function App() {
       window.alert("Este personaje ya está renderizado");
     } else {
       axios.get(
-        `http://localhost:3001/rickandmorty/character/${id}`
+        `http://localhost:3001/rickandmorty/character/${id}` 
       ).then(({ data }) => {
         if (data.name) {
           setRenderedCharacterIds((oldIds) => ({ ...oldIds, [id]: true }));

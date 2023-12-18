@@ -14,10 +14,8 @@ const Nav = ({ onSearch, clearScreen, logout }) => {
       <SearchBar onSearch={onSearch} clearScreen={clearScreen} />
       <div className="headTextContainer">
         <div className="navBarButtons">
-        <span className="headText">
-          There are 826 characters from the Rick and Morty world to discover!{" "}
-        </span>
-
+        
+        <a href="https://check.so" class="btn-shine" target="_blank">There are 826 characters from the Rick and Morty world to discover!</a>
         <div className="inputAndButton">
             <input
               autoComplete="off"
