@@ -8,8 +8,8 @@ export default (data)=>{
         errors.e1 = 'Debe ingresar un email'
     }
     
-    if (data.email.length >35){
-        errors.e3 = 'Menos de 35 caracteres'
+    if (data.email.length< 10 || data.email.length> 25){
+        errors.e3 = 'Menos de 25 caracteres'
     }
     
     if(!/\d/.test(data.password) ){

@@ -15,13 +15,17 @@
 
 }
 .subButton{
+    padding:4px;
+    padding-left: 7px;
+    padding-right: 9px;
+    font-size: 16px;
     transform: translateY(165px);
     box-shadow: none;
     border-radius: 8px;
+    background-color:  rgb(134, 169, 191);
+    font-family:   sans-serif;
 }
-.formContainer .showButton :active{
-   background-color: unset;
-}
+
 
 .banner{
     position: absolute;
@@ -35,22 +39,17 @@
     flex-direction: column;
         user-select: none;
         color: rgb(17, 80, 119);
-
- 
         position: relative;
         align-items: center;
    justify-content: center;
         background-position: center;
-        
         border: 4px solid rgba(0, 213, 255, 0.1);
         border-radius: 50%;
         height:525px;
         width: 525px;
         overflow: hidden;
- 
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.51);
         transition: transform 0.1s ease;
-       
         font-size: 12px;
         transition: box-shadow 0.5s ease;
       
@@ -59,7 +58,7 @@
 
 
 .formCard:hover {
-    box-shadow: 0 0px 40px rgba(5, 146, 246, 0.51);
+    box-shadow: 0 0px 40px rgba(77, 180, 253, 0.691);
 }
 
 @keyframes lightsdsd {
