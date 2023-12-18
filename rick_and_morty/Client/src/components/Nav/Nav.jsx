@@ -1,29 +1,76 @@
 import "./nav.css";
+import { useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import { Link } from "react-router-dom";
-const Nav = ({ onSearch, clearScreen,logout }) => {
+const Nav = ({ onSearch, clearScreen, logout }) => {
+  const [id, setId] = useState("");
+
+  const handleChange = (event) => {
+    setId(event.target.value);
+  };
+
   return (
-    <div  >
-
+    <div className="navContainer">
       <SearchBar onSearch={onSearch} clearScreen={clearScreen} />
-<div className="navBarButtons">
-     <Link to ="About">
-      <button className="showButton">About</button>
-      </Link>
+      <div className="headTextContainer">
+        <div className="navBarButtons">
+        <span className="headText">
+          There are 826 characters from the Rick and Morty world to discover!{" "}
+        </span>
 
-      <Link to="Home">
-      <button className="showButton">Home</button>
-<button className='showButton' onClick={()=>clearScreen()}>Clear screen</button>
-      </Link>
-      <button className="showButton" onClick={logout}>Logout</button>
-      <Link to ="Favorites">
-      <button className="showButton">Favorites</button>
-      </Link>
-      
+        <div className="inputAndButton">
+            <input
+              autoComplete="off"
+              value={id}
+              onChange={handleChange}
+              placeholder=" Enter ID "
+              id="input"
+              type="search"
+            />
+                <Link to="Home">
+              <button className="showButton" onClick={() => onSearch(id)}>
+                Show on screen
+              </button>
+            </Link>
 
-      </div>    
-      <div className="subTextContainer">
-      <span className="subText">There are 826 characters from the Rick and Morty world to discover!  </span>
+
+             
+            <Link to="Home">
+              <button
+                className="showButton"
+                onClick={() => onSearch(Math.ceil(Math.random() * 826))}
+              >
+            
+                Add random
+              </button>
+            </Link>
+          <Link to="About">
+            <button className="showButton">About</button>
+          </Link>
+
+          <Link to="Home">
+            <button className="showButton">Home</button>
+          </Link>
+
+          <Link to="Home">
+            <button className="showButton" onClick={() => clearScreen()}>
+              Clear screen
+            </button>
+          </Link>
+
+          <Link to="Favorites">
+            <button className="showButton">Favorites</button>
+          </Link>
+
+          <button className="showButton" onClick={logout}>
+            Logout
+          </button>
+
+        
+
+       
+          </div>
+        </div>
       </div>
     </div>
   );

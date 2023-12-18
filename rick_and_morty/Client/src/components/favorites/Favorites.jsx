@@ -17,7 +17,7 @@ const Favorites = () => {
   return (
     <div className="favoritesContainer">
       <div className="selectors">
-      <div class="select-dropdown">
+      <div className="select-dropdown">
         <p className="orderBy">Order</p>
         <select className="order" name="order" onChange={handleOrder}>
           <option value="A"> Ascendente</option>
@@ -25,7 +25,7 @@ const Favorites = () => {
         </select>
         </div>
 
-        <div class="select-dropdown">
+        <div className="select-dropdown">
         <p className="filterBy">Filter</p>
           <select className="filter" name="filter" onChange={handleFilter}>
           <option value="Male">Male</option>

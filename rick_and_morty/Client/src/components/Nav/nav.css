@@ -1,51 +1,106 @@
-
-.navBarButtons{
-    display: flex;
- justify-content: right;
-    align-items: center;
-    margin-right: 10%;
-    color: rgb(179, 240, 213);
-    text-shadow: 0px 0px 10px rgb(0, 0, 0);
-    text-align: center;
-    position: relative;
-    transform: translateY(-45px);
-    margin-bottom: 100px;
-
+.navBarButtons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  position: relative;
+background-color: #012246ad;
+box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+  width: 100%;
+padding: 10px;
+  margin-bottom: 30px;
 }
 
-.subText{
-    display: none;
-    font-family: 'Kanit', sans-serif;
-    user-select: none;
-  color: rgb(7, 236, 202);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    text-align: center;
-    font-size: 29px;
-    font-weight: bolder;
-    height: min-content;
-    width: max-content;
-    margin-right: 40px;
-    justify-content: center;
-
-}
-.subTextContainer{
+.showButton {
+  margin: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+align-items: center;
+  font-weight:550;
+  text-shadow: 0px 0px 5px #000000;
+  font-size: 18px;
+   border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s,  border-radius 0.15s, border 0.15s ease-in-out; 
+  height: 35px;
+  white-space: nowrap;
+  color:rgb(242, 208, 98);
+  background:linear-gradient(45deg, #396ccb, #1c478d);
  
-    display:flex;
-    justify-content: center;
-    transform: translateY(-30px);
 }
-@media screen and (max-width:1340px) {
-    .navBarButtons {
-      display: flex;
-justify-content: center;
-margin-right:auto
-    }
-    .subText{
-        display: flex;
-        justify-content: center;
 
-        
+.showButton:hover {
+
+  box-shadow: 1px 1px 1px rgb(242, 208, 98);
+}
+
+.showButton:active {
+  transform: translate3d(1.5px, 1.5px, 0);
+  background: linear-gradient(45deg, #2a5091, #163972);
+
+}
+
+#input {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  font-weight:550;
+  text-shadow: 0px 0px 5px #000000;
+  font-size: 18px;
+  transform: translate3d(-5px, 0px, 0px);
+  color: rgb(242, 208, 98);
+
+  background:linear-gradient(45deg, #396ccb, #1c478d);
+  border-radius: 5px;
+  outline: none;
+
+  width: 90px;
+  height: 35px;
+ 
+  
+  text-align: center;
+  caret-color: transparent;
+}
+#input::placeholder {
+  color: rgb(242, 208, 98);
+
+  font-weight:550;
+}
+input:focus {
+  border: 2px solid rgb(179, 240, 213);
+  font-weight: lighter;
+}
+
+.title {
+ 
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  user-select: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  font-size: 45px;
+  animation: titleAnimation 5s ease infinite;
+}
+
+
+.headText {
+  position: relative;
+  font-family: "Kanit", sans-serif;
+  user-select: none;
+  color: rgb(153, 238, 238);
+
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+}
+@media screen and (max-width: 1000px) {
+  .navBarButtons {
+
+    justify-content: center;
+  
   }
+  .subText {
 
- 
+    justify-content: center;
+  }
 }

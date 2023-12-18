@@ -12,11 +12,7 @@ width: 300px;
 font-size: 14px;
 border: 6px solid rgb(2, 27, 23);
 }
-.aboutContainer .card:hover{
-    transform: translate3d(0px, -80px, 0px);
 
-
-}
 
 
 .aboutContainer .card img{

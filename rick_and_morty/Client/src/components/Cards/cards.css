@@ -5,6 +5,9 @@
   flex-wrap:wrap-reverse;
   flex-direction: row;
   gap: 25px;
+
+  overflow: hidden; /* Oculta la barra de desplazamiento */
+
 }
 
 

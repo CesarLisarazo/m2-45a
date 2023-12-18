@@ -20,20 +20,23 @@ margin-left: 10px;
   font-size: 12px;
   opacity: 0;
 
-transform: translateY(-80px) ;
 
 }
 
-
+.headTextContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .card:hover{
-  transform: translate3d(2px, -82px,0px)  ;
+  transform: translate3d(2px, -2px,0px)  ;
   box-shadow: -2px 2px 6px rgb(40, 229, 235);
 
  
   
 }
 @keyframes fadeIn {
-  from { opacity: 0; scale: 1.1;
+  from { opacity: 0; scale: 1.05;
 }
   to{opacity: 1; scale: 1;
 }

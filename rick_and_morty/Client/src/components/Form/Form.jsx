@@ -32,7 +32,7 @@ event.preventDefault();
       <div className =" formEmail">
         <label  htmlFor="email"><h2 className="email">Email:</h2></label>
         <input
-        placeholder="enter email"
+        placeholder="Cesar@henry.com"
         className="formInput"
         autoComplete="off"
           onChange={handleChange}
@@ -51,7 +51,7 @@ event.preventDefault();
         <div className =" formPass">
         <label  htmlFor="password"><h2 className="Password" >Password:</h2></label>
         <input
-        placeholder="enter password"
+        placeholder="casa1234"
         className="formInput"
            autoComplete="off"
           onChange={handleChange}
@@ -65,7 +65,7 @@ event.preventDefault();
        
         </div>
      
-        <button disabled ={errors.e1|| errors.e2||  errors.e3|| errors.p1 ||errors.p2} className='subButton'  type="submit"> submit</button>
+        <button disabled ={errors.e1|| errors.e2||  errors.e3|| errors.p1 ||errors.p2} className='subButton'  type="submit"><h2>submit</h2> </button>
       </form>
       </div>
     </div>
