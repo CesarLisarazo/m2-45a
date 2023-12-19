@@ -6,7 +6,7 @@
 }
 
 .detailContainer .card{
-background-image: url(https://t3.ftcdn.net/jpg/05/66/18/20/240_F_566182056_HpUZJTAjV7rcBWimtppYEX9fgqSNhZ8c.jpg);
+background-image: url(https://media.istockphoto.com/id/1273350560/photo/old-blue-green-background-texture-with-black-vignette-in-old-vintage-textured-border-design.webp?b=1&s=170667a&w=0&k=20&c=dPS794l9nLRUMX9hV9Ef2iKTssRQo1-PJQQJ1Bv6EK4=);
 background-size: cover;
 height: 590px;
 width: 300px;
@@ -17,8 +17,14 @@ flex-direction: column;
 
 }
 
+.detailContainer .card:hover{
+    transform: translate3d( 0px, 0px,0px)  ;
+}
+
+
+
 .charInfo{
-transform: translate3d(0px, 180px, 0px);
+transform: translate3d(0px, 160px, 0px);
 
 }
 .detailContainer .card img{
@@ -30,9 +36,6 @@ z-index: 1;
 width: 100%;
 bottom: 400px;
 cursor: pointer;
-
+border-radius: 20px;
 }
 
-.detailContainer .charName{
-transform: translateY(0px);
-}
