@@ -65,7 +65,7 @@ event.preventDefault();
        
         </div>
      
-        <button disabled ={errors.e1|| errors.e2||  errors.e3|| errors.p1 ||errors.p2} className='subButton'  type="submit"><h2>submit</h2> </button>
+        <button disabled ={errors.e1|| errors.e2||  errors.e3|| errors.p1 ||errors.p2} className='subButton'  type="submit">submit </button>
       </form>
       </div>
     </div>
